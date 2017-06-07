@@ -60,6 +60,7 @@
     "karma-spec-reporter": "0.0.30",
     "karma-webpack": "^2.0.2",
     "lolex": "^1.5.2",
+    "mapbox-gl": "^0.37.0",
     "materialize-css": "^0.98.2",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.3",
