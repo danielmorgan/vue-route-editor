@@ -1,60 +1,31 @@
 <template>
-  <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <hello></hello>
-    </main>
+  <div id="app" class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card blue-grey darken-3">
+          <div class="card-content white-text text-lighten-4">
+            <span class="card-title">
+              <i class="material-icons">announcement</i>
+              Hello World!
+            </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt libero pariatur sit ut. Asperiores commodi consectetur.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import Hello from './components/Hello';
-
   export default {
     name: 'app',
-
-    components: {
-      Hello
-    }
+    components: {}
   };
 </script>
 
-<style>
-  body {
-    margin: 0;
-  }
-
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-  }
-
-  main {
-    text-align: center;
-    margin-top: 40px;
-  }
-
-  header {
-    margin: 0;
-    height: 56px;
-    padding: 0 16px 0 24px;
-    background-color: #4fc08d;
-    color: #ffffff;
-  }
-
-  header span {
-    display: block;
-    position: relative;
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: .02em;
-    font-weight: 400;
-    box-sizing: border-box;
-    padding-top: 16px;
-  }
+<style lang="scss">
 </style>
