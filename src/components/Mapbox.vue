@@ -1,5 +1,5 @@
 <template>
-    <div id="map" class="mapboxgl-map"></div>
+    <div id="map" class="Map"></div>
 </template>
 
 <script>
@@ -22,9 +22,13 @@
 </script>
 
 <style lang="scss">
-    .mapboxgl-map {
+    .Map {
         width: 100%;
         height: 100%;
         align-items: stretch;
+    }
+
+    .mapboxgl-canvas:focus {
+        outline: none;
     }
 </style>
