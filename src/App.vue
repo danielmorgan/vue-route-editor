@@ -1,31 +1,6 @@
 <template>
-  <div id="app" class="container">
-    <div class="row">
-      <div class="col s12 l3">
-
-        <v-card class="blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">
-              <i class="material-icons">announcement</i>
-              Hello World!
-            </span>
-            <p>I am a very simple v-card. I am good at containing small bits of information.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Action</a>
-          </div>
-        </v-card>
-
-      </div>
-
-      <div class="col s12 l9">
-
-        <v-card>
-          <mapbox :accessToken="env.mapbox.accessToken"></mapbox>
-        </v-card>
-
-      </div>
-    </div>
+  <div id="app">
+    <mapbox :accessToken="env.mapbox.accessToken"></mapbox>
   </div>
 </template>
 
@@ -47,4 +22,14 @@
 </script>
 
 <style lang="scss">
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  #app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
 </style>
