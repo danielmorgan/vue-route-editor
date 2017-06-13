@@ -1,27 +1,61 @@
 <template>
-    <div id="map" class="Map"></div>
+    <div id='map' class='Map'>
+        <div style='display: none;'>{{ geojson }}</div>
+    </div>
 </template>
 
 <script>
-    import mapboxgl from 'mapbox-gl';
+  import mapboxgl from 'mapbox-gl';
 
-    export default {
-      props: [
-        'accessToken'
-      ],
+  export default {
+    props: [
+      'accessToken'
+    ],
 
-      mounted () {
-        mapboxgl.accessToken = this.accessToken;
+    computed: {
+      geojson () {
+        return this.$store.state.geojson;
+      }
+    },
 
-        this.map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v9'
+    mounted () {
+      mapboxgl.accessToken = this.accessToken;
+
+      this.map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-122.486, 37.829],
+        zoom: 14
+      });
+
+      this.map.on('load', this.prepareLayers.bind(this));
+    },
+
+    updated () {
+      this.map.getSource('route').setData(this.geojson.data);
+    },
+
+    methods: {
+      prepareLayers () {
+        this.map.addLayer({
+          'id': 'route',
+          'type': 'line',
+          'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          'paint': {
+            'line-color': '#396eda',
+            'line-width': 5
+          },
+          source: this.geojson
         });
       }
-    };
+    }
+  };
 </script>
 
-<style lang="scss">
+<style lang='scss'>
     .Map {
         width: 100%;
         height: 100%;

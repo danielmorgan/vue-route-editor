@@ -12,11 +12,14 @@
 
 <script>
   import env from 'env';
+  import store from './vuex/store';
   import Mapbox from './components/Mapbox.vue';
   import Sidebar from './components/Sidebar.vue';
 
   export default {
     name: 'app',
+
+    store: store,
 
     components: { Mapbox, Sidebar },
 

@@ -2,6 +2,7 @@
     <div class="Sidebar">
         <li class="Sidebar__logo">
             Vue Route Editor
+
         </li>
 
         <li>
@@ -27,8 +28,9 @@
   export default {
     methods: {
       loadTestTrack () {
-        localforage.getItem('test-track')
-          .then(data => console.log(data));
+        localforage.getItem('test-track').then(data => {
+          this.$store.commit('loadTrack', data);
+        });
       }
     }
   };
