@@ -1,9 +1,8 @@
 <template>
   <div class="App">
-      <v-side-nav id="sidebar" fixed>
-        <sidebar></sidebar>
-      </v-side-nav>
-      <!--<sidebar></sidebar>-->
+    <v-side-nav id="sidebar" fixed>
+      <sidebar></sidebar>
+    </v-side-nav>
 
     <div class="MapboxContainer">
       <mapbox :accessToken="env.mapbox.accessToken"></mapbox>
@@ -48,9 +47,9 @@
   }
 
   .MapboxContainer {
-    display: flex;
     position: relative;
     z-index: 100;
+    width: 100%;
     height: 100%;
   }
 </style>

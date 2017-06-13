@@ -5,33 +5,33 @@
         </li>
 
         <li>
-            <a class="subheader">
-                Routes
-            </a>
+            <a href="#" class="subheader">Routes</a>
         </li>
 
-        <li><div class="divider"></div></li>
+        <li>
+            <div class="divider"></div>
+        </li>
 
         <li>
-            <a href="#">
+            <a href="#" v-on:click.prevent="loadTestTrack">
                 <i class="material-icons">timeline</i>
-                09, Jun - 17:18 PT
-            </a>
-            <a href="#">
-                <i class="material-icons">timeline</i>
-                09, Jun - 16:52 PT
-            </a>
-            <a href="#">
-                <i class="material-icons">timeline</i>
-                08, Jun - 22:50 PT
+                test-track
             </a>
         </li>
     </div>
 </template>
 
 <script>
-    export default {
-    };
+  import localforage from 'localforage';
+
+  export default {
+    methods: {
+      loadTestTrack () {
+        localforage.getItem('test-track')
+          .then(data => console.log(data));
+      }
+    }
+  };
 </script>
 
 <style lang="scss">
