@@ -3,11 +3,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import Materials from 'vue-materials';
-import localforage from 'localforage';
 import 'materialize-css/sass/materialize.scss';
 import './assets/css/materialize.css';
-
-localforage.setItem('test-track', require('../test/fixtures/track.json'));
 
 Vue.config.productionTip = false;
 

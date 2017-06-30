@@ -1,11 +1,4 @@
-import Vuex from 'vuex';
-
-const state = {
-  tracks: require('../../test/fixtures/fake-tracks.json'),
-  selectedTrack: 0
-};
-
-const mutations = {
+export default {
   loadTracks (state, tracks) {
     state.tracks = [];
     for (const track of tracks) {
@@ -17,5 +10,3 @@ const mutations = {
     state.selectedTrack = index;
   }
 };
-
-export default new Vuex.Store({ state, mutations });

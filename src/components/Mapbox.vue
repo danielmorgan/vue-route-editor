@@ -1,6 +1,6 @@
 <template>
     <div id='map' class='Map'>
-        <div style='display: none;'>{{ geojson }}</div>
+        <div style='display: none;'>{{ selectedTrack }}</div>
     </div>
 </template>
 
@@ -13,8 +13,9 @@
     ],
 
     computed: {
-      geojson () {
-        return this.$store.state.geojson;
+      selectedTrack () {
+        const index = this.$store.state.selectedTrack;
+        return this.$store.state.tracks[index];
       }
     },
 
@@ -32,7 +33,7 @@
     },
 
     updated () {
-      this.map.getSource('route').setData(this.geojson.data);
+      this.map.getSource('route').setData(this.selectedTrack.data);
     },
 
     methods: {
@@ -48,7 +49,7 @@
             'line-color': '#396eda',
             'line-width': 5
           },
-          source: this.geojson
+          source: this.selectedTrack
         });
       }
     }
