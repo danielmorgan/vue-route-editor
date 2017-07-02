@@ -6,7 +6,7 @@
 
 <script>
   import mapboxgl from 'mapbox-gl';
-  import lineStyle from './lineStyle.json';
+  import lineStyles from './lineStyles.json';
 
   export default {
     props: [
@@ -38,11 +38,20 @@
 
     methods: {
       prepareLayers () {
+        for (const i in this.$store.state.tracks) {
+          this.map.addLayer({
+            'id': 'track_' + i,
+            'type': 'line',
+            'source': this.$store.state.tracks[i],
+            ...lineStyles.inactive
+          });
+        }
+
         this.map.addLayer({
           'id': 'route',
           'type': 'line',
           'source': this.selectedTrack,
-          ...lineStyle
+          ...lineStyles.active
         });
       }
     }

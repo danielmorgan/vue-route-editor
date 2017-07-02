@@ -1,0 +1,23 @@
+{
+  "active": {
+    "layout": {
+      "line-join": "round",
+      "line-cap": "round"
+    },
+    "paint": {
+      "line-color": "#396eda",
+      "line-width": 5
+    }
+  },
+  "inactive": {
+    "layout": {
+      "line-join": "round",
+      "line-cap": "round"
+    },
+    "paint": {
+      "line-color": "#396eda",
+      "line-width": 2,
+      "line-opacity": 0.5
+    }
+  }
+}
