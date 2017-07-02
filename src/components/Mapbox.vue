@@ -6,6 +6,7 @@
 
 <script>
   import mapboxgl from 'mapbox-gl';
+  import lineStyle from './lineStyle.json';
 
   export default {
     props: [
@@ -14,8 +15,7 @@
 
     computed: {
       selectedTrack () {
-        const index = this.$store.state.selectedTrack;
-        return this.$store.state.tracks[index];
+        return this.$store.state.selectedTrack;
       }
     },
 
@@ -41,15 +41,8 @@
         this.map.addLayer({
           'id': 'route',
           'type': 'line',
-          'layout': {
-            'line-join': 'round',
-            'line-cap': 'round'
-          },
-          'paint': {
-            'line-color': '#396eda',
-            'line-width': 5
-          },
-          source: this.selectedTrack
+          'source': this.selectedTrack,
+          ...lineStyle
         });
       }
     }

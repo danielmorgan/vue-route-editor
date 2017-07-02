@@ -1,8 +1,9 @@
 import Vuex from 'vuex';
+import tracks from '../../test/fixtures/fake-tracks.json';
 
 const state = {
-  tracks: require('../../test/fixtures/fake-tracks.json'),
-  selectedTrack: 0
+  tracks: tracks,
+  selectedTrack: tracks[0]
 };
 
 const mutations = {
@@ -14,7 +15,7 @@ const mutations = {
   },
 
   selectTrack (state, index) {
-    state.selectedTrack = index;
+    state.selectedTrack = state.tracks[index];
   }
 };
 

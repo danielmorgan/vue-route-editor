@@ -1,0 +1,10 @@
+{
+  "layout": {
+    "line-join": "round",
+    "line-cap": "round"
+  },
+  "paint": {
+    "line-color": "#396eda",
+    "line-width": 5
+  }
+}
